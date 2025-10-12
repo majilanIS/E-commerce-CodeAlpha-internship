@@ -1,0 +1,103 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 50px;
+    background-color: #f5f5f5;
+    flex-wrap: wrap;
+}
+
+/* 🔹 Left Section */
+.heroLeft {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.heroLeft h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* 🔹 "NEW" + hand icon */
+.handHandIcon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.handHandIcon p {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ff4141;
+}
+
+.handHandIcon img {
+    width: 35px;
+    height: auto;
+}
+
+/* 🔹 Latest Collections button */
+.heroLatestBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff4141;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 25px;
+    width: fit-content;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.heroLatestBtn:hover {
+    background-color: #e63b3b;
+    transform: scale(1.05);
+}
+
+.heroLatestBtn img {
+    width: 25px;
+    margin-left: 10px;
+}
+
+/* 🔹 Right Section */
+.heroRight {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroRight img {
+    width: 400px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .heroLeft h1 {
+        font-size: 28px;
+    }
+
+    .heroRight img {
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    .heroLatestBtn {
+        margin: 20px auto 0;
+    }
+}

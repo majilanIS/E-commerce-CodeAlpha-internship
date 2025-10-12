@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Section container */
+.new_collections {
+    background-color: #fafafa;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* Title */
+.new_collections h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.new_collections hr {
+    width: 80px;
+    height: 4px;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 2px;
+    margin: 0 auto 40px auto;
+}
+
+/* Flex layout for 4 items in a row */
+.collections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    /* smaller gap between items */
+}
+
+.collections>* {
+    flex: 1 1 calc(25% - 8px);
+    /* 4 items per row, minus gap */
+    max-width: calc(25% - 8px);
+    box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .collections>* {
+        flex: 1 1 calc(33.33% - 8px);
+        /* 3 items per row on tablet */
+        max-width: calc(33.33% - 8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .collections>* {
+        flex: 1 1 calc(50% - 8px);
+        /* 2 items per row on small tablet */
+        max-width: calc(50% - 8px);
+    }
+}
+
+@media (max-width: 480px) {
+    .collections>* {
+        flex: 1 1 100%;
+        /* 1 item per row on mobile */
+        max-width: 100%;
+    }
+}
