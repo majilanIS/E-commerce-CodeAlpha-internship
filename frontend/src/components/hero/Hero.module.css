@@ -5,6 +5,7 @@
     padding: 50px 50px;
     background-color: #f5f5f5;
     flex-wrap: wrap;
+    width: 100%  !important;
 }
 
 /* 🔹 Left Section */

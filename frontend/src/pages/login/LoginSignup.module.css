@@ -1,0 +1,98 @@
+/* 🔹 General Container */
+.login_signup {
+    width: 100%;
+    min-height: 100vh;
+    background: #f6f7fb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 🔹 Inner Card */
+.login_signup_container {
+    background: #fff;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.login_signup_container h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 🔹 Input Fields */
+.loginSignup_signup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.loginSignup_signup input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.loginSignup_signup input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.3);
+}
+
+/* 🔹 Button */
+.login_signup_container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login_signup_container button:hover {
+    background-color: #5a52d4;
+}
+
+/* 🔹 Text Section */
+.login_signup_container p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 15px;
+}
+
+.login_signup_container p span {
+    color: #6c63ff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* 🔹 Checkbox Section */
+.loginSignup_agree {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #666;
+}
+
+.loginSignup_agree input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}

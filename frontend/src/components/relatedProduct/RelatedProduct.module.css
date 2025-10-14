@@ -1,0 +1,23 @@
+.relatedProducts {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.relatedProducts h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.relatedProducts hr {
+    width: 60px;
+    margin: 0 auto 30px auto;
+    border: 2px solid #555;
+}
+
+.relatedProductsItem {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
