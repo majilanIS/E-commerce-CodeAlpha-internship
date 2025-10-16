@@ -2,7 +2,6 @@
 
 .shop_category {
     width: 80%;
-    /* margin: 20px 0; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -53,13 +52,68 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
-.shopCategory_loadMore{
+
+.shopCategory_loadMore {
     text-align: center;
     margin: 10px;
 }
-.shopCategory_loadMore button{
+
+.shopCategory_loadMore button {
     padding: 15px 30px;
     border-radius: 20px;
     border: none;
-    /* font-size: 1.1rem; */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.shopCategory_loadMore button:hover {
+    background: #eee;
+}
+
+/* ============================= */
+/*      RESPONSIVE DESIGN        */
+/* ============================= */
+
+/* Tablets and small laptops */
+@media (max-width: 992px) {
+    .shop_category {
+        width: 90%;
+    }
+
+    .shopCategory_indexSort {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .shopCategory_product {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+    .shop_category {
+        width: 95%;
+    }
+
+    .shopCategory_indexSort {
+        flex-direction: column;
+        font-size: 12px;
+    }
+
+    .shopCategory_sort {
+        justify-content: center;
+    }
+
+    .shopCategory_product {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .shopCategory_loadMore button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px 0;
+    }
 }

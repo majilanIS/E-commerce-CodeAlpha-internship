@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import all_product from "../components/Assets/Frontend_Assets/all_product";
+import all_product from "../components/Assets/Frontend_Assets/all_product"; //b/c this local, when it is fetch with api, it's fetch not import
 
 export const ShopContext = createContext(null);
 
@@ -14,14 +14,16 @@ const ShopDefaultCart = () => {
 const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(ShopDefaultCart());
 
+  //to add the item to the cart
   const addToCart = (itemId) => {
     setCartItems((prev) => ({
       ...prev,
       [itemId]: prev[itemId] + 1,
     }));
-      console.log(cartItems)
+      // console.log(cartItems)
   };
 
+  //to remove the item from cart
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({
       ...prev,
@@ -29,23 +31,44 @@ const ShopContextProvider = (props) => {
     }));
     };
     
+  //for calculate the totalAmount
     const getTotalCartAmount = () => {
-    let total = 0;
+    let totalAmount = 0;
     all_product.forEach((item) => {
         if (cartItems[item.id] > 0) {
-        total += item.new_price * cartItems[item.id];
+        totalAmount += item.new_price * cartItems[item.id];
         }
     });
-    return total.toFixed(2);
-    };
+    return totalAmount.toFixed(2);
+  };
 
+  //for calculate the totalitems
+  const getTotalCartItems = () => {
+      let totalItems = 0;
+      for (const item in cartItems) {
+          if (cartItems[item] > 0) 
+              totalItems += cartItems[item];
+          }
+      return totalItems;
+  }
+
+  // const getTotalCartItems = () => {
+  //   let total = 0;
+  //   all_product.forEach((item) => {
+  //   if (cartItems[item] > 0) {
+  //     total += cartItems[item]
+  //   }
+  // })
+  //   return total;
+  // }
 
   const contextValue = {
     all_product,
     cartItems,
     addToCart,
     removeFromCart,
-    getTotalCartAmount
+    getTotalCartAmount,
+    getTotalCartItems
   };
 
   return (
