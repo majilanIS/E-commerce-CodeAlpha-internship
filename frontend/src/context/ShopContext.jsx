@@ -1,5 +1,6 @@
-import React, { createContext, useState, useEffect } from "react";
-import all_product from "../components/Assets/Frontend_Assets/all_product";
+import React, { createContext, useState } from "react";
+import all_product from "../components/Assets/Frontend_Assets/all_product"; 
+// When you switch to fetching products via API, replace this import with an API call.
 
 export const ShopContext = createContext(null);
 
@@ -14,6 +15,7 @@ const ShopDefaultCart = () => {
 const ShopContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(ShopDefaultCart());
 
+  // ➕ Add item to cart
   const addToCart = (itemId) => {
     setCartItems((prev) => ({
       ...prev,
@@ -21,6 +23,7 @@ const ShopContextProvider = ({ children }) => {
     }));
   };
 
+  // ➖ Remove item from cart
   const removeFromCart = (itemId) => {
     setCartItems((prev) => ({
       ...prev,
@@ -28,6 +31,7 @@ const ShopContextProvider = ({ children }) => {
     }));
   };
 
+  // 💰 Calculate total cart amount
   const getTotalCartAmount = () => {
     let total = 0;
     all_product.forEach((item) => {
@@ -37,16 +41,17 @@ const ShopContextProvider = ({ children }) => {
     });
     return Number(total.toFixed(2));
   };
- 
+
+  // 🧾 Calculate total items in cart
   const getTotalCartItems = () => {
-    let TotalItem = 0;
+    let totalItems = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
-         TotalItem += cartItems[item]
-       }
+        totalItems += cartItems[item];
+      }
     }
-    return TotalItem;
-   }
+    return totalItems;
+  };
 
   const contextValue = {
     all_product,
@@ -54,7 +59,7 @@ const ShopContextProvider = ({ children }) => {
     addToCart,
     removeFromCart,
     getTotalCartAmount,
-    getTotalCartItems
+    getTotalCartItems,
   };
 
   return (

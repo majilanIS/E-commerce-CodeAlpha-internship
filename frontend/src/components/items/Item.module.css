@@ -1,4 +1,4 @@
-/* 🔹 Container */
+/* 🔹 Base Styles */
 .item {
   width: 80%;
   display: flex;
@@ -30,7 +30,6 @@
 
 .image_container img {
   width: 100%;
-  /* max-width: 200px; */
   height: auto;
   border-radius: 10px;
   object-fit: cover;
@@ -43,7 +42,7 @@
 }
 
 .name_container h1 {
-  font-size: 13px !important;
+  font-size: 13px;
   font-weight: 600;
   color: #333;
   margin: 0;
@@ -71,21 +70,73 @@
   font-size: 0.95rem;
 }
 
-/* 🔹 Responsive tweaks */
-@media (max-width: 768px) {
+/* ===================================================== */
+/* 📱 RESPONSIVE DESIGN – step by step breakpoints below */
+/* ===================================================== */
+
+/* 1️⃣ 1280px – Slightly smaller desktop */
+@media (max-width: 1280px) {
+  .item {
+    max-width: 240px;
+  }
+
+  .name_container h1 {
+    font-size: 12.5px;
+  }
+
+  .itemNewPrice {
+    font-size: 1rem;
+  }
+
+  .itemOldPrice {
+    font-size: 0.9rem;
+  }
+}
+
+/* 2️⃣ 1024px – Laptops and tablets in landscape */
+@media (max-width: 1024px) {
+  .item {
+    max-width: 220px;
+    gap: 8px;
+  }
+
+  .image_container img {
+    max-width: 200px;
+  }
+
+  .name_container h1 {
+    font-size: 12px;
+  }
+}
+
+/* 3️⃣ 800px – Tablets portrait mode */
+@media (max-width: 800px) {
   .item {
     max-width: 45%;
     padding: 14px;
   }
+  .image_container{
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+  }
+  .image_container img {
+    width: 100%;
+    height: auto;
+  }
 
   .name_container h1 {
-    font-size: 1rem;
+    font-size: 11.5px;
+  }
+
+  .itemPrices {
+    gap: 8px;
   }
 }
 
-@media (max-width: 480px) {
+/* 4️⃣ 500px – Small phones */
+@media (max-width: 500px) {
   .item {
-    max-width: 100%;
+    max-width: 90%;
     padding: 12px;
   }
 
@@ -94,6 +145,42 @@
   }
 
   .name_container h1 {
+    font-size: 10px;
+  }
+
+  .itemNewPrice {
     font-size: 0.95rem;
+  }
+
+  .itemOldPrice {
+    font-size: 0.85rem;
+  }
+}
+
+/* 5️⃣ 400px – Extra small phones */
+@media (max-width: 400px) {
+  .item {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .image_container img {
+    max-width: 140px;
+  }
+
+  .name_container h1 {
+    font-size: 10px;
+  }
+
+  .itemPrices {
+    gap: 5px;
+  }
+
+  .itemNewPrice {
+    font-size: 0.9rem;
+  }
+
+  .itemOldPrice {
+    font-size: 0.8rem;
   }
 }
