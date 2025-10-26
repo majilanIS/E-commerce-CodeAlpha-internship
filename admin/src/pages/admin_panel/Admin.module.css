@@ -1,0 +1,39 @@
+
+/* Main layout container */
+.admin {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f6f8;
+}
+
+/* Routes/content area */
+.routes-container {
+    flex: 1;
+    padding: 30px;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+/* Sidebar default (left side) */
+.admin> :first-child {
+    flex-shrink: 0;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+    .admin {
+        flex-direction: column;
+        /* Stack vertically */
+    }
+
+    .routes-container {
+        padding: 20px;
+    }
+
+    /* Sidebar full-width on top */
+    .admin> :first-child {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+}

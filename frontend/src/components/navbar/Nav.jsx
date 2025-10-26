@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom';
 import classes from './Nav.module.css';
 import logo from '../Assets/Frontend_Assets/logo.png';
 import cart_icon from '../Assets/Frontend_Assets/cart_icon.png';
+import { useContext } from 'react';
+import { ShopContext } from '../../context/ShopContext';
 
 const Nav = () => {
   const [menu, setMenu] = useState('shop');
+  const {getTotalCartItems} = useContext(ShopContext)
 
   return (
     <nav className={classes.navbar}>
@@ -34,9 +37,10 @@ const Nav = () => {
         <Link to='/login'>
           <button>Login</button>
         </Link>
-        <Link to='/cart'>
-          <img src={cart_icon} alt="Cart Icon" />
-        </Link>
+          <Link to='/cart' className={classes.cart_link}>
+            <img src={cart_icon} alt="Cart Icon" />
+            <p className={classes.cart_count}>{getTotalCartItems()}</p>
+          </Link>
       </div>
     </nav>
   );

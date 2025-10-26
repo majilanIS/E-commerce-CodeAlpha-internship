@@ -1,0 +1,107 @@
+/* Sidebar.module.css */
+
+/* Sidebar container */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s;
+}
+
+/* Each sidebar link row */
+.sidebar_items {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    color: #ffffff;
+    background-color: #eee;
+}
+
+/* Icon wrapper */
+.sidebar_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.sidebar_item img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Text inside sidebar_items */
+.sidebar_items p {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    color: #000;
+}
+
+/* Hover effect for row */
+.sidebar_items:hover {
+    background-color: #ccc;
+}
+
+/* Hover effect for icon */
+.sidebar_item:hover {
+    background-color: #555555;
+    transform: scale(1.1);
+}
+
+/* Active item */
+.sidebar_items.active {
+    background-color: #555555;
+}
+
+/* Link reset */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Media Query: small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        padding: 30px;
+    }
+
+    .sidebar_items {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    .sidebar_items p {
+        /* display: none; */
+        /* hide text on collapse */
+    }
+
+    .sidebar_item {
+        width: 60px;
+        height: 60px;
+    }
+
+    .sidebar_item img {
+        width: 40px;
+        height: 40px;
+    }
+}

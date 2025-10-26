@@ -1,0 +1,125 @@
+
+/* Main container */
+.addproduct {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #f9f9f9;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Field wrapper */
+.addproduct_fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* For the price fields container */
+.addproduct_fields_prices {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Make the two price fields share the width equally */
+.addproduct_fields_prices .addproduct_fields {
+    flex: 1;
+}
+
+/* Label text */
+.addproduct_fields p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+/* Inputs and selector */
+.addproduct_fields input,
+.addproduct_fields_selector {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+}
+
+.addproduct_fields input:focus,
+.addproduct_fields_selector:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Upload area */
+.upload_label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 30px;
+    background-color: #fdfdfd;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.upload_label:hover {
+    border-color: #007bff;
+    background-color: #eef7ff;
+}
+
+.upload_label img {
+    width: 150px;
+    height: 150px;
+    opacity: 0.8;
+}
+
+/* Add button */
+.addproduct_btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.addproduct_btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .addproduct {
+        max-width: 90%;
+        padding: 20px;
+        gap: 15px;
+        /* fix the moving to left and right */
+        overflow-x: hidden;
+    }
+
+    .addproduct_fields_prices {
+        flex-direction: column;
+        /* Stack vertically on small screens */
+    }
+
+    .addproduct_fields p {
+        font-size: 14px;
+    }
+
+    .addproduct_btn {
+        font-size: 14px;
+    }
+}
